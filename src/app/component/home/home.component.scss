@@ -1,0 +1,67 @@
+h3{
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.underline {
+  border-bottom: 1.5px solid black;
+  margin: 0 30% 0px 30%;
+}
+.box-col-whats{
+  padding-left: 23%;
+}
+.box-col-web{
+  padding-right: 23%;
+}
+.box-whats {
+  background-color: #247ba0;
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  margin: auto;
+  padding: 0px 20px 27px 20px;
+}
+.box-image {
+  width: 160px;
+  height: auto;
+  position: relative;
+  margin-top: -90px;
+}
+.box-text {
+  font-weight: 600;
+  color: #f1f1f1;
+}
+.box-contato {
+  height: 400px;
+  background-color: #006494;
+  border-radius: 52px;
+
+  .imagem {
+    width: 40%;
+    height: 100%;
+    float: left;
+
+    background-image: url("../../../assets/img/contato.svg");
+    background-size: cover;
+
+    border-radius: 52px 0 0 52px;
+  }
+  .contato {
+    width: 60%;
+    height: 100%;
+    float: right;
+
+    background-color: #006494;
+    border-radius: 0 52px 52px 0;
+    text-align: justify;
+
+    .texto{
+      color: #E8F1F2;
+      font-weight: 500;
+    }
+    .botao-contato{
+      background-color: #1B98E0;
+      color: #E8F1F2;
+      box-shadow: 0px 4px 4px #00000054;
+    }
+  }
+}
