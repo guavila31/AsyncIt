@@ -15,6 +15,15 @@ export class ContatosComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  scroll(id: any) {
+    let el: any
+    console.log(`scrolling to ${id}`);
+    el = document.getElementById(id);
+    el.scrollIntoView();
+    console.log("Passou")
+    this.mensagemEnviada = !this.mensagemEnviada;
+  }
 }
 
 
