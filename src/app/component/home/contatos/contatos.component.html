@@ -17,33 +17,68 @@
     </div>
   </div>
 
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="box-contato p-5 mb-5">
-        <div class="form-contato mb-4">
-          <div class="mb-3">
-            <label for="" class="form-label">Nome</label>
-            <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nome" required>
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Email</label>
-            <input type="email" class="form-control" name="nome" id="nome" aria-describedby="nome" required>
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Assunto</label>
-            <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nome" required>
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Mensagem</label>
-            <label for="" class="form-label"></label>
-            <textarea class="form-control" name="mensagem" id="mensagem" rows="3" required></textarea>
-          </div>
+  <ng-template *ngIf="!mensagemEnviada" [ngTemplateOutlet]="formulario"></ng-template>
+  <ng-template *ngIf="mensagemEnviada" [ngTemplateOutlet]="enviado"></ng-template>
 
-          <div class="d-grid">
-            <button type="submit" class="btn btn-block" >Enviar!</button>
-          </div>
+  <ng-template #formulario>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="box-contato p-5 mb-5">
+          <form>
+            <div class="form-contato mb-4">
+              <div class="mb-3">
+                <label for="" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nome" required>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Email</label>
+                <input type="email" class="form-control" name="nome" id="nome" aria-describedby="nome" required>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Assunto</label>
+                <input type="text" class="form-control" name="nome" id="nome" aria-describedby="nome" required>
+              </div>
+              <div class="mb-3">
+                <label for="" class="form-label">Mensagem</label>
+                <label for="" class="form-label"></label>
+                <textarea class="form-control" name="mensagem" id="mensagem" rows="3" required></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-block">
+                  <span (click)="mensagemEnviada = !mensagemEnviada">
+                    Enviar!
+                  </span>
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </div>
+
+  </ng-template>
+
+  <ng-template #enviado>
+
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="box-contato p-5 mb-5">
+          <div class="mensagem-enviada">
+            <h3>Mensagem enviada</h3>
+            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam cum repellendus esse ullam
+              officiis
+              nostrum quisquam sequi non optio vel!</span>
+          </div>
+          <div class="nova-mensagem d-grid mt-2">
+            <button class="btn btn-block" (click)="mensagemEnviada = !mensagemEnviada">Voltar</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </ng-template>
+
 </div>

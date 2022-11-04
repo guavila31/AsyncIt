@@ -11,6 +11,8 @@ export class ContatosComponent implements OnInit {
 
   constructor( private router: Router) { }
 
+  public mensagemEnviada: boolean = false;
+
   ngOnInit(): void {
   }
 }
