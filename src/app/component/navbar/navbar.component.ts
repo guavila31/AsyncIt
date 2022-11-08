@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:  Router) { }
 
   ngOnInit(): void {
   }
@@ -15,7 +16,13 @@ export class NavbarComponent implements OnInit {
     let el: any
     console.log(`scrolling to ${id}`);
     el = document.getElementById(id);
-    el.scrollIntoView();
+
+    if (el != undefined || el != null) {
+      el.scrollIntoView();
+    } else {
+      this.router.navigate(['home'])
+    }
+
   }
 
 }
